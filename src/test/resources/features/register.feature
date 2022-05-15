@@ -14,7 +14,7 @@ Feature: Register
     Then I get "<result>" in register
     Examples:
       | email | password | result |
-      | dhivasA@gss.com | a | redirectLogin|
+      | dhivasA2@gss.com | a | redirectLogin|
       |                 | a | emailCantEmpty|
       | a               |   | passwordCantEmpty|
       | a               | a | registerSameData |

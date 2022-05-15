@@ -20,15 +20,18 @@ public class loginSteps {
         loginPage.clickButtonSignin();
     }
 
+
     @And("I input field email {string} in login")
-    public void iInputFieldEmailInLogin(String email) {
+    public void iInputFieldEmailInLogin(String email) throws InterruptedException {
         loginPage.inputFieldEmail(email);
     }
+
 
     @And("I input field password {string} in login")
     public void iInputFieldPasswordInLogin(String password) {
         loginPage.inputFieldPassword(password);
     }
+
 
     @And("I click button login")
     public void iClickButtonLogin() {
@@ -37,16 +40,30 @@ public class loginSteps {
 
     @Then("I get the {string}")
     public void iGetThe(String result) {
-        if (result.equals("redirectHomepage")){
-            loginPage.verifyHeaderProduct();
-        }else if (result.equals("alertButton")){
-            loginPage.verifyAlertButton();
-        }else if (result.equals("passwordCanNotEmpty")){
-            loginPage.verifyAlertPassword();
-        }else {
-            loginPage.verifyAlertEmail();
+        switch (result) {
+            case "redirectHomepage":
+                loginPage.verifyHeaderProduct();
+                break;
+            case "alertButton":
+                loginPage.verifyAlertButton();
+                break;
+            case "passwordCanNotEmpty":
+                loginPage.verifyAlertPassword();
+                break;
+            default:
+                loginPage.verifyAlertEmail();
+                break;
         }
-    }
 
+//        if (result.equals("redirectHomepage")){
+//            loginPage.verifyHeaderProduct();
+//        }else if (result.equals("alertButton")){
+//            loginPage.verifyAlertButton();
+//        }else if (result.equals("passwordCanNotEmpty")){
+//            loginPage.verifyAlertPassword();
+//        }else {
+//            loginPage.verifyAlertEmail();
+//        }
+    }
 
 }

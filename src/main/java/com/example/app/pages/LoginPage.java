@@ -5,6 +5,8 @@ import io.appium.java_client.MobileBy;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 
+import static java.lang.Thread.sleep;
+
 public class LoginPage extends BasePageObject {
 
 //    Selector
@@ -17,9 +19,19 @@ public class LoginPage extends BasePageObject {
     By buttonAlert(){ return MobileBy.xpath("//android.view.View[@content-desc=\"Email atau password tidak valid.\"]");}
     By headerProducts() { return MobileBy.xpath("//android.view.View[@content-desc=\"Products\"]");}
 
-    public void clickButtonSignin(){ click(buttonSignin());}
-    public void inputFieldEmail(String email){ sendKeys(fieldEmail(),email);}
-    public void inputFieldPassword(String password){ sendKeys(fieldPassword(),password);}
+
+    public void clickButtonSignin(){click(buttonSignin());}
+
+    public void inputFieldEmail(String email) throws InterruptedException {
+        click(fieldEmail());
+        sleep(2000);
+        sendKeys(fieldEmail(),email);
+    }
+
+    public void inputFieldPassword(String password){
+        click(fieldPassword());
+        sendKeys(fieldPassword(),password);
+    }
     public void clickButtonLogin(){ click(buttonLogin());}
     public void isDisplayedHeaderProduct() { isDisplayed(headerProducts());}
 

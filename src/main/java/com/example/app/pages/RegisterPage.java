@@ -19,14 +19,17 @@ public class RegisterPage extends BasePageObject {
 
     public void clickTextRegister(){ click(textRegister());}
     public void inputFieldFullName() {
+        click(fieldFullName());
         clear(fieldFullName());
         sendKeys(fieldFullName(),"Dhivas Dharma Saputra");
     }
     public void inputEmail(String email){
+        click(fieldEmail());
         clear(fieldEmail());
         sendKeys(fieldEmail(),email);
     }
     public void inputPassword(String password){
+        click(fieldPassword());
         clear(fieldPassword());
         sendKeys(fieldPassword(), password);
     }

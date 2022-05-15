@@ -1,14 +1,19 @@
 package com.example.steps;
 
-import com.example.app.pages.LogoutPage;
+import com.example.app.pages.LoginPage;
+
 import io.cucumber.java.en.And;
 
 public class logoutSteps {
 
-    LogoutPage logoutPage = new LogoutPage();
+
+    LoginPage loginPage = new LoginPage();
 
     @And("I click button sign out")
     public void iClickButtonSignOut() {
-        logoutPage.clickButtonSignout();
+        loginPage.clickButtonSignin();
     }
+
+
+//    karna button sign in dan sign out memiliki locator yang sama, jadi panggil ulang saja.
 }

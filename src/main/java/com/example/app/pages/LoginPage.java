@@ -40,5 +40,4 @@ public class LoginPage extends BasePageObject {
     public void verifyAlertButton() { Assertions.assertTrue(find(buttonAlert()).isDisplayed());}
     public void verifyHeaderProduct(){Assertions.assertTrue(find(headerProducts()).isDisplayed());}
 
-
 }

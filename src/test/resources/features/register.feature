@@ -14,10 +14,10 @@ Feature: Register
     Then I get "<result>" in register
     Examples:
       | email | password | result |
-      | dhivasDS1@gmail.com | dhivas321  | redirectLogin    |
+      | dhivasDS2@gmail.com | dhivas321  | redirectLogin    |
       |                     | dhivas321  | emailCantEmpty   |
       | dhivas@gmail.com    |            | passwordCantEmpty|
-      | dhivasDS1@gmail.com | dhivas321  | registerSameData |
+      | dhivasDS2@gmail.com | dhivas321  | registerSameData |
 
 
 #  Input valid register
